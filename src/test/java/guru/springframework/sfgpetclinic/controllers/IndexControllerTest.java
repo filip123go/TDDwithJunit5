@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.time.Duration;
 
@@ -47,5 +48,16 @@ class IndexControllerTest {
 	void testTimeoutPrempt(){
 		assertTimeoutPreemptively(Duration.ofMillis(100) , ()-> Thread.sleep(2000));
 		System.out.println("I got here too");
+	}
+
+	@Test
+	void testAssumptionTrue(){
+    	assumeTrue("Stavros".equalsIgnoreCase(System.getenv("Stavros_4")));
+	}
+
+	@Test
+	@DisplayName("The assumption is true")
+	void testAssumptionTrueAssumptionIsTrue(){
+		assumeTrue("Stavros".equalsIgnoreCase("Stavros"));
 	}
 }
