@@ -3,16 +3,19 @@ package guru.springframework.sfgpetclinic.model;
 
 import java.util.HashSet;
 import java.util.Set;
+import lombok.Getter;
+import lombok.Setter;
 
 public class Owner extends Person {
 
-    private String address;
-    private String city;
-    private String telephone;
-    private Set<Pet> pets = new HashSet<>();
+@Getter	@Setter private String address;
+@Getter	@Setter private String city;
+@Getter	@Setter private String telephone;
+@Getter	@Setter private Set<Pet> pets = new HashSet<>();
+
 
     public Owner(Long id, String firstName, String lastName) {
-        super(id, firstName, lastName);
+        super(id, firstName, lastName); // this is from the Person class
     }
 
     public Pet getPet(String name) {
@@ -37,37 +40,5 @@ public class Owner extends Person {
             }
         }
         return null;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
     }
 }
