@@ -1,5 +1,8 @@
 package guru.springframework.sfgpetclinic.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Person extends BaseEntity {
 
     public Person(Long id, String firstName, String lastName) {
@@ -8,22 +11,22 @@ public class Person extends BaseEntity {
         this.lastName = lastName;
     }
 
-    private String firstName;
-    private String lastName;
+	@Getter	@Setter	private String firstName;
+	@Getter @Setter private String lastName;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
 }
